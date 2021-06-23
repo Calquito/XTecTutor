@@ -1,3 +1,4 @@
+  
 import { HttpClient } from '@angular/common/http';
 import { stringify } from '@angular/compiler/src/util';
 import { Component, OnInit } from '@angular/core';
@@ -8,11 +9,11 @@ import { LoginFormModel } from '../services/login-form.model';
 
 
 @Component({
-  selector: 'app-login-administrador',
-  templateUrl: './login-administrador.component.html',
-  styleUrls: ['./login-administrador.component.css']
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.css']
 })
-export class LoginAdministradorComponent implements OnInit {
+export class LoginComponent implements OnInit {
 
   formData: LoginFormModel= {
     username: null,
@@ -25,7 +26,7 @@ export class LoginAdministradorComponent implements OnInit {
     private route: ActivatedRoute) { }
 
   //url del back
-  readonly rootURL = 'http://xtecmongodb.azurewebsites.net/api/administrador/login';
+  readonly rootURL = 'http://xtecmongodb.azurewebsites.net/api/estudiante/login';
 
   ngOnInit(): void {
   }
@@ -35,7 +36,7 @@ export class LoginAdministradorComponent implements OnInit {
     this.service.Post(this.formData,this.rootURL).subscribe(
      response => {
         if( response ===true){
-          this.router.navigate(['vista-administrador', this.formData.username.toString()]);
+          this.router.navigate(['vista-estudiante', this.formData.username.toString()]);
         }
         else{
           alert("Usuario inválido, por favor verifique los datos");

@@ -1,31 +1,36 @@
 import { HttpClient } from '@angular/common/http';
-import { stringify } from '@angular/compiler/src/util';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ConnectionService } from '../services/connection.service';
-import { LoginFormModel } from '../services/login-form.model';
-
+import { CrearEntradaModel } from '../services/crear-entrada.model';
 
 @Component({
-  selector: 'app-login-estudiante',
-  templateUrl: './login-estudiante.component.html',
-  styleUrls: ['./login-estudiante.component.css']
+  selector: 'app-crear-entrada',
+  templateUrl: './crear-entrada.component.html',
+  styleUrls: ['./crear-entrada.component.css']
 })
-export class LoginEstudianteComponent implements OnInit {
-
-  formData: LoginFormModel= {
-    username: null,
-    password: null,
-  };
+export class CrearEntradaComponent implements OnInit {
 
   constructor(private http: HttpClient,
     private service : ConnectionService,
     private router: Router,
     private route: ActivatedRoute) { }
 
-  //url del back
+  //url del back end
   readonly rootURL = 'http://xtecmongodb.azurewebsites.net/api/estudiante/login';
+
+  formData: CrearEntradaModel= {
+    carrera: null,
+    curso: null,
+    tema: null,
+    titulo: null,
+    coautores: null,
+    descripcion: null,
+    contenido: null,
+    anexos:null,
+    visibilidad:null,
+  };
 
   ngOnInit(): void {
   }
@@ -33,17 +38,13 @@ export class LoginEstudianteComponent implements OnInit {
 
   onSubmit(form: NgForm) {
     this.service.Post(this.formData,this.rootURL).subscribe(
+     //aqui va el response de la entrada
      response => {
-        if( response ===true){
-          this.router.navigate(['vista-estudiante', this.formData.username.toString()]);
-        }
-        else{
-          alert("Usuario inválido, por favor verifique los datos");
-        }
+       
      },
      error => {
        alert("no se logro conectar con el servidor");
       }
      );
     }
-  }
+}

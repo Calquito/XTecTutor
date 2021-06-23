@@ -4,7 +4,9 @@ body {
 
 .page-button {
     background-color:#00457c;
-    color:#ffffff;}
+    color:#ffffff;
+    width: 300px !important;
+}
 
 html, body { height: 100%; }
 

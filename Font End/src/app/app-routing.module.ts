@@ -4,14 +4,19 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 //imports de componentes
-import { LoginEstudianteComponent } from './login-estudiante/login-estudiante.component';
-import { LoginAdministradorComponent } from './login-administrador/login-administrador.component';
-import { PaginaDeInicioComponent} from './pagina-de-inicio/pagina-de-inicio.component'
+import { HomeDashboardComponent} from './home-dashboard/home-dashboard.component'
+import { CrearEntradaComponent } from './crear-entrada/crear-entrada.component';
+import { LoginComponent } from './login/login.component';
+import { PerfilComponent } from './perfil/perfil.component';
 
 
-const routes: Routes = [ { path: '', component: PaginaDeInicioComponent},
-{ path: 'login-estudiante', component: LoginEstudianteComponent},
-{ path: 'login-administrador', component: LoginAdministradorComponent}];
+
+const routes: Routes = [ { path: '', component: LoginComponent},
+{ path: 'login', component: LoginComponent},
+{ path: 'home-dashboard', component:  HomeDashboardComponent},
+{ path: 'crear-entrada', component:  CrearEntradaComponent},
+{ path: 'perfil', component:  PerfilComponent}
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes),FormsModule],
