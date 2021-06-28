@@ -36,7 +36,7 @@ readonly rootURL = 'https://localhost:44323/api/login/login';
     this.service.Post(this.formData, this.rootURL).subscribe(
      response => {
         if ( response === 1){
-          this.router.navigate(['/home-dashboard']);      
+          this.router.navigate(['/home-dashboard']);     
         }
         else if ( response === 2){
           this.router.navigate(['/catalogos']);

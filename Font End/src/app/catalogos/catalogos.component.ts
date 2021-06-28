@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ConnectionService } from '../services/connection.service';
 
 @Component({
   selector: 'app-catalogos',
@@ -7,20 +8,36 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CatalogosComponent implements OnInit {
 
-  constructor() { }
+  constructor(private service: ConnectionService) { }
   catalogos;
   nombre;
   ngOnInit(): void {
     this.catalogos = [
     {
-      nombre: "Ingenieria en computadores",
+      Name: "Ingenieria en computadores",
     },
     {
-      nombre: "Ingenieria en electronica"
+      Name: "Ingenieria en electronica"
     },
     {
-      nombre: "Ingenieria en materiales"
-    }]
+      Name: "Ingenieria en materiales"
+    }];
+    this.service.Get('https://localhost:44323/api/Catalogue').subscribe(
+     response => {
+        this.catalogos = response;
+     },
+     error => {
+       console.log(error);
+      }
+     );
   }
-
+add(){
+  let catalogue = {Name : this.nombre}
+this.service.Post(catalogue, 'https://localhost:44323/api/Catalogue').subscribe(
+     response => { },
+     error => {
+       console.log(error);
+      }
+     );
+}
 }
