@@ -6,6 +6,8 @@ import { HttpClient } from '@angular/common/http';
 @Injectable({ providedIn: 'root' })
 
 export class ConnectionService {
+  usuario;
+  password;
 
   items = [];
 

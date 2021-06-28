@@ -15,7 +15,7 @@ import { LoginFormModel } from '../services/login-form.model';
 })
 export class LoginComponent implements OnInit {
 
-  formData: LoginFormModel= {
+  formData: LoginFormModel = {
     username: null,
     password: null,
   };
@@ -35,16 +35,27 @@ export class LoginComponent implements OnInit {
   onSubmit(form: NgForm) {
     this.service.Post(this.formData, this.rootURL).subscribe(
      response => {
-        if( response === true){
-          this.router.navigate(['vista-estudiante', this.formData.username.toString()]);
+        if ( response === 1){
+          this.router.navigate(['/home-dashboard']);      
         }
-        else{
-          alert("Usuario inválido, por favor verifique los datos");
+        else if ( response === 2){
+          this.router.navigate(['/catalogos']);
+        }else {
+          alert('No se logro conectar con el servidor');
         }
      },
      error => {
-       alert("no se logro conectar con el servidor");
+       if (error.status === 400){
+          this.service.usuario = null;
+          this.service.password = '';
+          alert('No se encontro el usuario');      
+       }else{
+          alert('No se logro conectar con el servidor');
+
+        }
       }
      );
+
+
     }
   }

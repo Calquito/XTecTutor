@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./editar-catalogo.component.css']
 })
 export class EditarCatalogoComponent implements OnInit {
-
+  catalogo = 'Ingenieria en computadores';
+  curso;
   constructor() { }
 
   ngOnInit(): void {

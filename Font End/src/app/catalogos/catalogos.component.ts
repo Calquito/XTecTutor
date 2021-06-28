@@ -9,6 +9,7 @@ export class CatalogosComponent implements OnInit {
 
   constructor() { }
   catalogos;
+  nombre;
   ngOnInit(): void {
     this.catalogos = [
     {

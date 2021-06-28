@@ -10,22 +10,22 @@
                 <div>
                   <h4>Agregar un catalogo</h4>
                   <div class="entrada">
- <input  >
+ <input placeholder="Nombre del catalogo" [(ngModel)]="nombre" class="inp">
                 <button class="but2">Agregar</button>
             </div>
         
 </div>
 
         </mat-card-content>
-        <mat-card-content  routerLink = "/entrada/1" *ngFor="let entrada of catalogos" class="logContainer">
+        <mat-card-content  *ngFor="let entrada of catalogos" class="logContainer">
            
                 <div><br>
                   <h4>{{entrada.nombre}}</h4>
         
 </div>
  <div class="entrada">
- <button class="but2" >Ver</button>
-                <button class="but2">Editar</button>
+ <button class="but2"  routerLink = "/catalogo/1" >Ver</button>
+                <button class="but2"  routerLink = "/editar-catalogo/1">Editar</button>
             </div>
         </mat-card-content>
     </div>

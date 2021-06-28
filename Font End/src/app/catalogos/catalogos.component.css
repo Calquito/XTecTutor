@@ -6,6 +6,11 @@
   top: 25%;
   left: 30%;
 }
+.inp{
+  width: 500px;
+  height: 25px;
+  margin-top: 20px;
+}
 .but2{
   width: 150px;
   border-color: #ae374a;
