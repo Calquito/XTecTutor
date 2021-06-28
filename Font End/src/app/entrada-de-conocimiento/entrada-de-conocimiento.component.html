@@ -1,0 +1,70 @@
+
+<!--carga sidebar-->
+<div class="cont" >
+    <app-sidebar></app-sidebar>
+    <!--carga pagina-->
+    <div class="info">
+        <mat-card-content class="logContainer">
+            <div class="contenido">
+             <div class="entrada"><h3><strong>{{entrada.titulo}}</strong></h3>
+                   <button (click)=" editarEntrada(1)"><img src="assets\edit.png" width="30px"  height="30px" /></button> 
+
+             </div>
+             <div class="entrada">
+                <div>{{coautor}}<br>
+                    <small>Fecha de creación: {{this.entrada.creacion | date: "dd/MM/yyyy"}}</small><br>
+                    <small>Última modificación: {{this.entrada.modificacion | date: "dd/MM/yyyy"}}</small>
+                </div>
+                <div><br><small>Calificación: {{this.entrada.calificacion}}</small><br>
+                    <small>Cantidad de vistas: {{this.entrada.vistas}}</small></div>
+
+             </div>
+            <mat-card-content class="des">
+                <small><strong>Descripción</strong></small>
+                <small>{{this.entrada.descripcion}}</small>
+            </mat-card-content>
+            <p>{{this.entrada.contenido}}</p>
+
+            <strong>Anexos</strong>
+            <mat-card-content class="des">
+                
+            </mat-card-content>
+            <p>Califica la entrada</p>
+            <mat-button-toggle-group [(ngModel)]="cal" aria-label="Font Style">
+                <mat-button-toggle value="1">1</mat-button-toggle>
+                <mat-button-toggle value="2">2</mat-button-toggle>
+                <mat-button-toggle value="3">3</mat-button-toggle>
+                <mat-button-toggle value="4">4</mat-button-toggle>
+                <mat-button-toggle value="5">5</mat-button-toggle>
+                <mat-button-toggle value="6">6</mat-button-toggle>
+                <mat-button-toggle value="7">7</mat-button-toggle>
+                <mat-button-toggle value="8">8</mat-button-toggle>
+                <mat-button-toggle value="9">9</mat-button-toggle>
+                <mat-button-toggle value="10">10</mat-button-toggle>
+            </mat-button-toggle-group>
+            <form class="example-form">
+                <textarea class="text"  cols="105" rows="3" matInput #message placeholder="Escribe un comentario..."></textarea>
+                <div class="butdiv"><button class="but">Enviar</button></div>
+  </form>
+              <strong>Comentarios</strong>
+              <div *ngFor="let comment of comments" class="column">
+                            <img src="assets/level-selector-line.svg" width="100%" />
+
+     <div class="entrada">
+
+
+             <small><strong> {{comment.nombre}} </strong></small>
+     
+              <small> {{comment.fecha}} </small>
+          </div>
+           
+            <small> {{comment.comentario}} </small>
+        
+
+</div>
+</div>
+        </mat-card-content>
+    </div>
+</div>
+
+

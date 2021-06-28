@@ -1,0 +1,15 @@
+.info{
+  margin-top: 50px;
+  width: 70%;
+  /* Esto equilibria lo del aside */
+  position: relative;
+  top: 25%;
+  left: 10%;
+}
+.but{
+  border-color: #ae374a7f;
+  border-radius: 15px;
+  background-color: #ae374a;
+  color: white;
+   width: 150px;
+}

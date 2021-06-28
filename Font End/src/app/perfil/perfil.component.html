@@ -1,0 +1,115 @@
+<div class="cont" >
+    <!--carga sidebar-->
+    <div>
+    <app-sidebar></app-sidebar>
+    </div>
+
+    <!--carga pagina-->
+    <div class="info">
+      <div class="cent">
+ <mat-button-toggle-group [(ngModel)]="profile" aria-label="Font Style">
+                <mat-button-toggle checked="true" value="true">Mi perfil</mat-button-toggle>
+                <mat-divider [vertical]="true"></mat-divider>
+
+                <mat-button-toggle value="false">Mis entradas</mat-button-toggle>
+                
+            </mat-button-toggle-group>
+          </div>
+        <!--cambiar cuando se conecte con el back-->
+        <div *ngIf="profile == 'true'">
+        <br>
+        <br>
+        <div class="entrada"><h2>Nombre de usuario:</h2><h2> Nombre de usuario</h2></div>
+        <br>
+        <div class="entrada"><h4>Carrera:</h4><h4>Carrera</h4></div>
+        <br>
+        <div class="entrada"><h4>Carnet:</h4><h4> Carnet</h4></div>
+        <br>
+        <div class="entrada"><h4>Número de teléfono:</h4><h4>  Número de teléfono</h4></div>
+        <br>
+        <div class="entrada"><h4>Entradas creadas:</h4><h4>  Entradas creadas</h4></div>
+        <br>
+        <br>
+        <div class="butdiv"><button class="but" (click)="password = true"><img src="assets/change.png" height="20px" />Cambiar contraseña</button></div>
+            
+            </div>
+              <div *ngIf="profile == 'false'">
+                <app-mis-entradas></app-mis-entradas>
+              </div>
+          </div>
+        </div>
+        <div *ngIf="password" class="password"><div >
+  
+              <form #form="ngForm" autocomplete="off" (submit)="update(form)">
+  
+                <div class="form-group">
+                  <label for="crearCuentaForm">Antigua contraseña</label>
+                  <input type="text" id="nombre_up" name="nombre_up" [(ngModel)]="formUpdate.old_password" class="form-control"><br>
+                </div>
+          
+                <div class="form-group">
+                  <label for="crearCuentaForm"> Nueva contraseña</label>
+                  <input type="text" id="porcentaje_up" name="porcentaje_up"  class="form-control"><br>
+                </div>
+
+                <div class="form-group">
+                    <label for="crearCuentaForm"> Confirmar contraseña</label>
+                    <input type="text" id="porcentaje_up" name="porcentaje_up" [(ngModel)]="formUpdate.new_password" class="form-control"><br>
+                  </div>
+                <br>          
+                <button class="but2" type="submit" click="password == true">Cambiar</button>
+                <button class="but2" (click)="password = false">Cancelar</button>
+              </form>
+            </div></div>
+
+
+
+  <!--contenido de la ventana modal-->
+  <!--
+  <div class="modal fade" id="myModalNorm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        
+            <div class="modal-header">
+                <h3 class="modal-title" id="myModalLabel">
+                    Actualizar datos
+                </h3>
+                <button type="button" class="close" 
+                   data-dismiss="modal">
+                       <span aria-hidden="true">&times;</span>
+                       <span class="sr-only">Close</span>
+                </button>
+            </div>
+            
+            
+            <div class="modal-body">
+  
+              <form #form="ngForm" autocomplete="off" (submit)="update(form)">
+  
+                <div class="form-group">
+                  <label for="crearCuentaForm">Antigua contraseña</label>
+                  <input type="text" id="nombre_up" name="nombre_up" [(ngModel)]="formUpdate.old_password" class="form-control"><br>
+                </div>
+          
+                <div class="form-group">
+                  <label for="crearCuentaForm"> Nueva contraseña</label>
+                  <input type="text" id="porcentaje_up" name="porcentaje_up"  class="form-control"><br>
+                </div>
+
+                <div class="form-group">
+                    <label for="crearCuentaForm"> Confirmar contraseña</label>
+                    <input type="text" id="porcentaje_up" name="porcentaje_up" [(ngModel)]="formUpdate.new_password" class="form-control"><br>
+                  </div>
+                <br>
+                <br>
+          
+                <button class="btn btn-light btn-lg btn-block page-button" type="submit">Cambiar</button>
+              </form>
+            </div>
+        </div>
+    </div>
+  </div>
+-->
+
+
+

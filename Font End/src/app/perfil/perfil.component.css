@@ -1,0 +1,72 @@
+.cont{
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  width: 100%;
+}
+.password{
+  position: fixed;
+  top: 20%;
+  left: 40%;
+  z-index: 100;
+  background-color: white;
+  border-radius: 16px;
+    box-shadow: 5px 5px 5px 5px #ae374a7f;
+    padding: 30px;
+
+}
+.but{
+  width: 200px;
+  border-color: #ae374a7f;
+  border-radius: 15px;
+  background-color: #ae374a;
+  color: white;
+}
+.but2{
+  width: 150px;
+  border-color: #ae374a;
+  border-radius: 15px;
+  background-color: #ae374a;
+  margin-left: 10px;
+  color: white;
+}
+
+.cent{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.info{
+  margin-left: 70px;
+  margin-top: 90px;
+  display: flex;
+  flex-direction: column;
+   width: 70%;
+  /* Esto equilibria lo del aside */
+  position: relative;
+  top: 25%;
+  left: 20%;
+  box-shadow: 10px 10px 10px 10px lightgray;
+  border-radius: 16px;
+  padding: 20px;
+
+}
+.entrada{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+
+}
+.mat-button-toggle-checked {
+    border: 1px #ac222d solid !important;
+    border-radius: 5px !important;
+    background-color: #ae374a !important;
+    color: white;
+}
+mat-button-toggle {
+    width: 100%;
+}
+mat-button-toggle-group{
+    width: 100%;
+
+}

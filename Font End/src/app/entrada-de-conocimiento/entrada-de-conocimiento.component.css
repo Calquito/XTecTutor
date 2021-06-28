@@ -1,0 +1,85 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+.logContainer {
+  display: flex;
+  justify-content: flex-start;
+ background: white;
+  box-shadow: 21px 4px 21px lightgray;
+  border-radius: 16px;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 20px;
+  text-align: left;
+}
+.cont{
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  width: 90%;
+}
+
+.info{
+  margin-left: 70px;
+  margin-top: 55px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 70%;
+  /* Esto equilibria lo del aside */
+  position: relative;
+  top: 25%;
+  left: 25%;
+  padding: 10px;
+}
+.entrada{
+  
+    display: flex;
+  justify-content: space-between;
+
+}
+.contenido{
+  margin: 20px;
+}
+.des{
+   display: flex;
+   flex-direction: column;
+   border-width: 2px;
+  border-style: solid;
+  border-color: gray;
+  border-radius: 40px;
+  width: 770px;
+  text-align: justify;
+  padding-top: 10px;
+  padding-left: 20px;
+  padding-right: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+}
+
+.mat-button-toggle-checked {
+    border: 1px #00457c solid !important;
+    border-radius: 5px !important;
+    background-color: #00457c7f !important;
+}
+.text{
+  margin-top: 10px;
+    resize: none;
+border-style: solid;
+  border-color: gray;
+     border-width: 2px;
+
+  border-radius: 15px;
+}
+.but{
+  width: 100px;
+  background-color: #00457c7f !important;
+  border-color: #00457c7f;
+  border-radius: 15px;
+
+
+}
+
+.butdiv{
+display: flex;
+justify-content: flex-end;
+}

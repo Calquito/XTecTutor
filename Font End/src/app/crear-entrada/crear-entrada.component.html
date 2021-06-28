@@ -1,0 +1,85 @@
+
+<!--carga sidebar-->
+<div class="d-flex flex-row bd-highlight  justify-content-between" >
+    <div >
+    <app-sidebar></app-sidebar>
+    </div>
+
+    <!--carga pagina-->
+    <div class="w-50 info">
+        <div class = "container">
+            <br>
+            <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+              <div class="d-flex flex-row bd-highlight justify-content-between" >  
+                <div class="form-group w-25">
+                  <label >Carrera</label>
+                  <select class="form-control" id="carrera" [(ngModel)]="formData.carrera">
+                    <option>Computadores</option>
+                    <option>Computación</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                  </select>
+                </div>
+                <div class="form-group w-25">
+                  <label >Curso</label>
+                  <select class="form-control" id="curso" [(ngModel)]="formData.curso">
+                    <option>Introducción a la programación</option>
+                    <option>Bases de datos</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                  </select>
+                </div>
+                <div class="form-group w-25">
+                  <label >Tema</label>
+                  <select class="form-control" id="tema" [(ngModel)]="formData.tema">
+                    <option>OOP</option>
+                    <option>Tablas</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="crear-entrada">Título</label>
+                <input type="email" class="form-control" id="titulo" [(ngModel)]="formData.titulo"   >
+                 
+              </div>
+              <div class="form-group">
+                <label for="crear-entrada">Co-autores</label>
+                <input type="email" class="form-control" id="coautores"  [(ngModel)]="formData.coautores"  >
+                 
+              </div>
+              <div class="form-group">
+                <label for="crear-entrada">Descripción</label>
+                <input type="email" class="form-control" id="descripción" [(ngModel)]="formData.descripcion"  >
+                 
+              </div>
+              <br>
+              <div class="form-group">
+                <textarea class="form-control" id="contenido" rows="5" [(ngModel)]="formData.contenido"></textarea>
+              </div>
+              <br>
+              <div class="form-group">
+                <label for="crear-entrada">Anexos</label>
+                <br>
+                <input type="file" class="form-control-file" id="anexos" [(ngModel)]="formData.anexos">
+              </div>
+              <br>
+              <div class="d-flex flex-row bd-highlight justify-content-between" >
+                <div class="form-check form-switch">
+                  <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                  <label class="form-check-label" for="flexSwitchCheckDefault">Visible</label>
+                </div>
+              
+                <button class="but" type="submit">Crear</button>
+              </div>
+            </form>
+        </div>
+    </div>
+    <div>
+    </div>
+</div>
+

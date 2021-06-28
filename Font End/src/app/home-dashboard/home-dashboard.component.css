@@ -1,0 +1,11 @@
+.info{
+  justify-content: flex-start;
+
+  display: flex;
+  flex-direction: column;
+   width: 70%;
+  /* Esto equilibria lo del aside */
+  position: relative;
+  top: 10%;
+  left: 20%;
+}

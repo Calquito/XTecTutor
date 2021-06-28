@@ -1,0 +1,47 @@
+<div class="cont" >
+    <!--carga sidebar-->
+    <div>
+    <app-sidebar></app-sidebar>
+    </div>
+
+    <!--carga pagina-->
+    <div class="info">
+      <div class="cent">
+        <h3><strong>Tipo de búsqueda</strong></h3>
+ <mat-button-toggle-group  aria-label="Font Style">
+                <mat-button-toggle checked="true" (click)="change('rel')">Relevancia</mat-button-toggle>
+                <mat-divider [vertical]="true"></mat-divider>
+
+                <mat-button-toggle (click)="change('rec')">Más recientes</mat-button-toggle>
+                
+            </mat-button-toggle-group>
+            <div>
+        <mat-card-content  routerLink = "/entrada/1" *ngFor="let entrada of entradas" class="logContainer">
+            <div class="contenido">
+             <div class="entrada">
+                <div>
+                  <h4><strong>{{entrada.titulo}}</strong></h4>
+                  {{entrada.carrera}} - {{entrada.curso}}<br>
+                  {{entrada.tema}}<br>
+                  {{entrada.autor}}<br><br>
+                    <small>Fecha de creación: {{this.entrada.creacion | date: "dd/MM/yyyy"}}</small><br>
+                    <small>Última modificación: {{this.entrada.modificacion | date: "dd/MM/yyyy"}}</small>
+
+                </div>
+                <div><small>Calificación: {{this.entrada.calificacion}}</small><br>
+                    <small>Cantidad de vistas: {{this.entrada.vistas}}</small>
+                  <br>
+                    <small>Comentarios: {{this.entrada.cantComentarios}}</small>
+                  <br><br><br><br>
+                    <div *ngIf="tipo == 'rel'">Indice de relevancia: {{this.entrada.relevancia}}</div></div>
+
+             </div>
+        
+</div>
+        </mat-card-content>
+    </div>
+          </div>
+
+          </div>
+        </div>
+       

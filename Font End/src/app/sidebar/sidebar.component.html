@@ -1,0 +1,29 @@
+<!--página principal, desde aquí se cargan los botones de vista-->
+<div class="cont">
+    <br>
+    <div class="col-8 mx-auto">
+        <a class="navbar-brand" [routerLink]="['']">
+            <img  alt="XTEC" src="assets\perfil.png" width="300" height="157">
+          </a>
+      </div>
+    <br>
+      <div class="col-8 mx-auto">
+        <a class="btn btn-light btn-lg btn-block page-button" [routerLink]="['/perfil']" role="button">Perfil</a>
+      </div>
+    <br>
+      <div class="col-8 mx-auto mar">
+        <a class="btn btn-light btn-lg btn-block page-button" [routerLink]="['/home-dashboard']" role="button">Estado del conocimiento</a>
+      </div>
+    <br>
+    <div class="col-8 mx-auto mar">
+        <a class="btn btn-light btn-lg btn-block page-button" [routerLink]="['/crear-entrada']" role="button">Crear entrada</a>
+    </div>
+    <br>
+    <div class="col-8 mx-auto mar">
+        <a class="btn btn-light btn-lg btn-block page-button" [routerLink]="['/entradas']" role="button">Buscar entradas</a>
+    </div>
+    <br>
+    <div class="col-8 mx-auto mar2">
+        <a class="btn btn-light btn-lg btn-block page-button" [routerLink]="['/']" role="button">Cerrar sesión</a>
+    </div>
+  </div>

@@ -1,0 +1,23 @@
+<div class="info">
+        <mat-card-content  routerLink = "/entrada/1" *ngFor="let entrada of entradas" class="logContainer">
+            <div class="contenido">
+             <div class="entrada">
+                <div>
+                  <h4><strong>{{entrada.titulo}}</strong></h4>
+                  {{entrada.carrera}} - {{entrada.curso}}<br>
+                  {{entrada.tema}}<br>
+                  {{entrada.autor}}<br><br>
+                    <small>Fecha de creación: {{this.entrada.creacion | date: "dd/MM/yyyy"}}</small><br>
+                    <small>Última modificación: {{this.entrada.modificacion | date: "dd/MM/yyyy"}}</small>
+
+                </div>
+                <div><small>Calificación: {{this.entrada.calificacion}}</small><br>
+                    <small>Cantidad de vistas: {{this.entrada.vistas}}</small>
+                  <br>
+                    <small>Comentarios: {{this.entrada.cantComentarios}}</small></div>
+
+             </div>
+        
+</div>
+        </mat-card-content>
+    </div>
