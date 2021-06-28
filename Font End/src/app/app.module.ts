@@ -19,6 +19,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatExpansionModule} from '@angular/material/expansion';
+import {MatTreeModule} from '@angular/material/tree';
+
 
 import { BusquedasComponent } from './busquedas/busquedas.component';
 import { EditarEntradaComponent } from './editar-entrada/editar-entrada.component';
@@ -60,7 +62,8 @@ import { DatosComponent } from './datos/datos.component';
     MatFormFieldModule,
     MatTabsModule,
     MatDividerModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatTreeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

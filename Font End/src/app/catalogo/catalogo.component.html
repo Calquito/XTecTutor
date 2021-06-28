@@ -1,0 +1,19 @@
+<!--carga sidebar-->
+<div >
+    <div >
+    <app-sidebar></app-sidebar>
+    </div>
+
+    <!--carga pagina-->
+    <div class="info">
+      <h1 class="car">Carrera</h1>
+    
+      <div *ngFor="let carrera of carreras">
+    <h5 class="curso">{{carrera.nombre}}</h5>
+    <p *ngFor="let curso of carrera.cursos" class="cur">curso</p>
+    </div>
+</div>
+
+
+</div>
+
