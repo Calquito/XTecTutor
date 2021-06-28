@@ -1,8 +1,8 @@
 <!--hace el login del estudiante-->
-<div class="col-6 mx-auto">
-    <br>
-    <br>
-    <h1>Login</h1>
+<div class="back">
+  <div class="flex-container">
+    <mat-card-content class="logContainer">
+    <img src="assets\logoo.png" width="500px" />
     <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">        
         <div class="form-group">
           <label for="crearCuentaForm">Usuario :</label>
@@ -16,4 +16,6 @@
     
         <button class="btn btn-light btn-lg btn-block page-button" type="submit">Iniciar sesión</button>
       </form>
+</mat-card-content>
+</div>
 </div>

@@ -1,0 +1,17 @@
+.mar{
+  margin-top: -15px;
+}
+.mar2{
+  margin-top: 50px;
+}
+.cont{
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+ width:5%;
+  height: 100vh;
+  /* Esto lo mantendra en su sitio */
+  position: fixed;
+  top: 10%;
+  left: 0;
+}

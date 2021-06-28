@@ -1,12 +1,12 @@
 
 <!--carga sidebar-->
-<div class="d-flex flex-row bd-highlight justify-content-between" >
+<div class="d-flex flex-row bd-highlight  justify-content-between" >
     <div >
     <app-sidebar></app-sidebar>
     </div>
 
     <!--carga pagina-->
-    <div class="w-50">
+    <div class="w-50 info">
         <div class = "container">
             <br>
             <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
@@ -59,7 +59,7 @@
               </div>
               <br>
               <div class="form-group">
-                <textarea class="form-control" id="contenido" rows="3" [(ngModel)]="formData.contenido"></textarea>
+                <textarea class="form-control" id="contenido" rows="5" [(ngModel)]="formData.contenido"></textarea>
               </div>
               <br>
               <div class="form-group">
@@ -70,11 +70,11 @@
               <br>
               <div class="d-flex flex-row bd-highlight justify-content-between" >
                 <div class="form-check form-switch">
-                  <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" [(ngModel)]="formData.anexos">
+                  <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
                   <label class="form-check-label" for="flexSwitchCheckDefault">Visible</label>
                 </div>
               
-                <button class="btn btn-light btn-lg btn-block page-button w-25" type="submit">Crear</button>
+                <button class="but" type="submit">Crear</button>
               </div>
             </form>
         </div>

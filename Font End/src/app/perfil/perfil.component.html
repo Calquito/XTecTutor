@@ -1,36 +1,44 @@
-<div class="d-flex flex-row bd-highlight justify-content-between" >
+<div class="cont" >
     <!--carga sidebar-->
-    <div >
+    <div>
     <app-sidebar></app-sidebar>
     </div>
 
     <!--carga pagina-->
-    <div class="w-50">
+    <div class="info">
+      <div class="cent">
+ <mat-button-toggle-group [(ngModel)]="profile" aria-label="Font Style">
+                <mat-button-toggle checked="true" value="true">Mi perfil</mat-button-toggle>
+                <mat-divider [vertical]="true"></mat-divider>
 
-        <!--Traté de usar tabs pero no funcó :,v  )-->
-        <br>
-        <br>
+                <mat-button-toggle value="false">Mis entradas</mat-button-toggle>
+                
+            </mat-button-toggle-group>
+          </div>
         <!--cambiar cuando se conecte con el back-->
-        <h2>Nombre de usuario</h2>
+        <div *ngIf="profile == 'true'">
         <br>
         <br>
-        <h4>Carrera</h4>
+        <div class="entrada"><h2>Nombre de usuario:</h2><h2> Nombre de usuario</h2></div>
+        <br>
+        <div class="entrada"><h4>Carrera:</h4><h4>Carrera</h4></div>
+        <br>
+        <div class="entrada"><h4>Carnet:</h4><h4> Carnet</h4></div>
+        <br>
+        <div class="entrada"><h4>Número de teléfono:</h4><h4>  Número de teléfono</h4></div>
+        <br>
+        <div class="entrada"><h4>Entradas creadas:</h4><h4>  Entradas creadas</h4></div>
         <br>
         <br>
-        <br>
-        <br>
-        <h4>Carnet</h4>
-        <br>
-        <br>
-        <h4>Número de teléfono</h4>
-        <br>
-        <br>
-        <h4>Entradas creadas</h4>
-        <br>
-        <br>
-        <!--ESTO DEBERIA ESTAR DENTRO DE UN MODAL PERO NO PUDE-->
-        <h4>Cambiar contraseña</h4>
-            <div >
+        <div class="butdiv"><button class="but" (click)="password = true"><img src="assets/change.png" height="20px" />Cambiar contraseña</button></div>
+            
+            </div>
+              <div *ngIf="profile == 'false'">
+                <app-mis-entradas></app-mis-entradas>
+              </div>
+          </div>
+        </div>
+        <div *ngIf="password" class="password"><div >
   
               <form #form="ngForm" autocomplete="off" (submit)="update(form)">
   
@@ -48,12 +56,12 @@
                     <label for="crearCuentaForm"> Confirmar contraseña</label>
                     <input type="text" id="porcentaje_up" name="porcentaje_up" [(ngModel)]="formUpdate.new_password" class="form-control"><br>
                   </div>
-                <br>
-                <br>
-          
-                <button class="btn btn-light btn-lg btn-block page-button" type="submit">Cambiar</button>
+                <br>          
+                <button class="but2" type="submit" click="password == true">Cambiar</button>
+                <button class="but2" (click)="password = false">Cancelar</button>
               </form>
-            </div>
+            </div></div>
+
 
 
   <!--contenido de la ventana modal-->

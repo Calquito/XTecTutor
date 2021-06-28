@@ -21,11 +21,11 @@ export class LoginComponent implements OnInit {
   };
 
   constructor(private http: HttpClient,
-    private service : ConnectionService,
-    private router: Router,
-    private route: ActivatedRoute) { }
+              private service: ConnectionService,
+              private router: Router,
+              private route: ActivatedRoute) { }
 
-  //url del back
+  // url del back
   readonly rootURL = 'http://xtecmongodb.azurewebsites.net/api/estudiante/login';
 
   ngOnInit(): void {
@@ -33,9 +33,9 @@ export class LoginComponent implements OnInit {
 
 
   onSubmit(form: NgForm) {
-    this.service.Post(this.formData,this.rootURL).subscribe(
+    this.service.Post(this.formData, this.rootURL).subscribe(
      response => {
-        if( response ===true){
+        if( response === true){
           this.router.navigate(['vista-estudiante', this.formData.username.toString()]);
         }
         else{

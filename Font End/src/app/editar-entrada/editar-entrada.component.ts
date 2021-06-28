@@ -1,18 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-
 
 @Component({
-  selector: 'app-entrada-de-conocimiento',
-  templateUrl: './entrada-de-conocimiento.component.html',
-  styleUrls: ['./entrada-de-conocimiento.component.css']
+  selector: 'app-editar-entrada',
+  templateUrl: './editar-entrada.component.html',
+  styleUrls: ['./editar-entrada.component.css']
 })
-export class EntradaDeConocimientoComponent implements OnInit {
+export class EditarEntradaComponent implements OnInit {
 entrada;
-coautor = '';
-cal;
-comments;
-  constructor(private router: Router) { }
+  constructor() { }
 
   ngOnInit(): void {
     this.entrada= {
@@ -26,66 +21,9 @@ comments;
       calificacion: 9,
       vistas: 100
     };
-    this.coautor = this.entrada.autor;
-    for(const autor of this.entrada.coautores){
-      this.coautor += ' - ' + autor;
-    }
-    this.comments = [
-      {
-        nombre: 'José Fernando Salas ',
-        fecha: '8 Sep 2019',
-        comentario:
-          'Como base de información laboral o de colocación ideal de vacantes ha sido realmente' +
-          ' cuestionable, a partir de las pocas opciones de convocatorias empresariales que aún emplean "in". Sin' +
-          ' embargo, como formato electrónico de CV a sido un acierto a la hora de colocarlo como enlace en información' +
-          ' profesional y para demostrar la productividad laboral.'
-      },
-      {
-        nombre: 'José Fernando Salas ',
-        fecha: '8 Sep 2019',
-        comentario:
-          'Como base de información laboral o de colocación ideal de vacantes ha sido realmente' +
-          ' cuestionable, a partir de las pocas opciones de convocatorias '
-      },
-      {
-        nombre: 'José Fernando Salas ',
-        fecha: '8 Sep 2019',
-        comentario:
-          'Como base de información laboral o de colocación ideal de vacantes ha sido realmente' +
-          ' cuestionable, a partir de las pocas opciones de convocatorias".'
-      },
-      {
-        nombre: 'José Fernando Salas ',
-        fecha: '8 Sep 2019',
-        comentario:
-          'Como base de información laboral o de colocación ideal de vacantes ha sido realmente' +
-          ' cuestionable, a partir de las pocas opciones de convocatorias empresariales que aún emplean "in". Sin' +
-          ' embargo, como formato electrónico de CV a sido un acierto a la hora de colocarlo como enlace en información' +
-          ' profesional.'
-      },
-      {
-        nombre: 'José Fernando Salas ',
-        fecha: '8 Sep 2019',
-        comentario:
-          'Como base de información laboral o de colocación ideal de vacantes ha sido realmente' +
-          ' cuestionable, a partir de las pocas opciones de convocatorias empresariales que aún emplean "in". Sin' +
-          ' embargo, como formato electrónico de CV a sido un acierto a la hora de colocarlo como enlace en información' +
-          ' profesional.'
-      },
-      {
-        nombre: 'José Fernando Salas ',
-        fecha: '8 Sep 2019',
-        comentario:
-          'Como base de información laboral o de colocación ideal de vacantes ha sido realmente' +
-          ' cuestionable, a partir de las pocas opciones de convocatorias empresariales que aún emplean "in". Sin' +
-          ' embargo, como formato electrónico de CV a sido un acierto a la hora de colocarlo como enlace en información' +
-          ' profesional.'
-      }
-    ];
   }
-  editarEntrada(id){
-    this.router.navigate(['editar-entrada', id.toString()]);
-
+  onSubmit(form){
+    
   }
 
 }

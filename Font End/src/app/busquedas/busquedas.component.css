@@ -1,10 +1,16 @@
 .info{
-  justify-content: center;
+  margin-left: 70px;
+  margin-top: 90px;
   display: flex;
   flex-direction: column;
-   width: 100%;
-   padding-top: 10px;
- 
+   width: 70%;
+  /* Esto equilibria lo del aside */
+  position: relative;
+  top: 25%;
+  left: 20%;
+  box-shadow: 10px 10px 10px 10px ae374a7f;
+  border-radius: 16px;
+  padding: 20px;
 
 }
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
@@ -12,19 +18,23 @@
   display: flex;
   justify-content: flex-start;
  background: white;
-  box-shadow: 5px 4px 21px lightgray;
+  box-shadow: 5px 4px 21px ae374a7f;
   border-radius: 16px;
   flex-direction: column;
   width: 100%;
   text-align: left;
   margin-bottom: 10px;
   cursor: pointer;
+  margin-top: 5px;
 }
 .cont{
   display: flex;
   justify-content: flex-start;
   flex-direction: row;
-  width: 90%;
+  width: 100%;
+}
+.cent{
+  text-align: center;
 }
 
 .entrada{
@@ -39,9 +49,10 @@
 
 
 .mat-button-toggle-checked {
-    border: 1px #00457c solid !important;
+    border: 1px #ac222d solid !important;
     border-radius: 5px !important;
-    background-color: #00457c7f !important;
+    background-color: #ae374a !important;
+    color: white;
 }
 .text{
   margin-top: 10px;
@@ -64,4 +75,11 @@ border-style: solid;
 .butdiv{
 display: flex;
 justify-content: flex-end;
+}
+mat-button-toggle {
+    width: 100%;
+}
+mat-button-toggle-group{
+    width: 100%;
+
 }

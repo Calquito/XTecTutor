@@ -4,6 +4,7 @@ import { CambiarContrasenaModel } from '../services/cambiar-contrasena.model';
 import { HttpClient } from '@angular/common/http';
 import { ConnectionService } from '../services/connection.service';
 
+import { MisEntradasComponent } from '../mis-entradas/mis-entradas.component';
 
 
 @Component({
@@ -13,6 +14,8 @@ import { ConnectionService } from '../services/connection.service';
 })
 
 export class PerfilComponent implements OnInit {
+  profile = 'true';
+  password = false;
   formUpdate: CambiarContrasenaModel= {
     old_password: null,
     new_password: null,
@@ -44,7 +47,8 @@ export class PerfilComponent implements OnInit {
       error => {
         alert("No se logró actualizar la contraseña");
        }
-  );;}
+  );;
+  }
 
 
 
