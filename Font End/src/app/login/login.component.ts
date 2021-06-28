@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit {
 
   formData: LoginFormModel = {
     username: null,
-    password: null,
+    pin: null,
   };
 
   constructor(private http: HttpClient,
@@ -26,13 +26,13 @@ export class LoginComponent implements OnInit {
               private route: ActivatedRoute) { }
 
   // url del back
-  readonly rootURL = 'http://xtecmongodb.azurewebsites.net/api/estudiante/login';
-
+readonly rootURL = 'https://localhost:44323/api/login/login';
   ngOnInit(): void {
   }
 
 
   onSubmit(form: NgForm) {
+    this.formData.pin = Number(this.formData.pin);
     this.service.Post(this.formData, this.rootURL).subscribe(
      response => {
         if ( response === 1){

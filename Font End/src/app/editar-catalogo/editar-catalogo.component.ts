@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class EditarCatalogoComponent implements OnInit {
   catalogo = 'Ingenieria en computadores';
   curso;
+  tema;
   constructor() { }
 
   ngOnInit(): void {
